@@ -16,18 +16,18 @@ gulp.task('minCss', async function(){
       .pipe(browserSync.stream());
 });
 
-gulp.task('minJs', async function(){
-    gulp.src('app/js/*.js')
+gulp.task('minJs', async function() {
+    gulp.src('app/js/main.js')
       .pipe(minifyJS())
       .pipe(gulp.dest('public/js'))
       .pipe(browserSync.stream());
-    });
+  });
     
-gulp.task('watchAll', async function() {
-    gulp.watch("app/css/*.scss", gulp.series('minCss'))
-    gulp.watch("app/css/*.js", gulp.series('minJs'));
-});
-
+  gulp.task('watchAll', function() {
+    gulp.watch("app/css/*.scss", gulp.series('minCss'));
+    gulp.watch("app/js/*.js", gulp.series('minJs'));
+  });
+  
 gulp.task('browserSync', function() {
     browserSync.init({
         server: "public/"

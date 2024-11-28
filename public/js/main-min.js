@@ -1,1 +1,1 @@
-let code="dada";
+function slowScroll(o){return $("html, body").animate({scrollTop:$(o).offset().top-50},500),!1}

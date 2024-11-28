@@ -1,22 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Suez+One&display=swap');
 
 
-
 $linear-gradient: #d90646, #eb3f2d;
 
-
-a {
-    text-decoration: none;
-
-    &:hover{
-        text-decoration: none;
-    }
-}
 body {
   font-family: 'Montserrat', sans-serif;
   font-weight: 300;
   color: #fff;
+}
 
+a {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 .flex {
@@ -25,56 +23,57 @@ body {
 }
 
 header {
-    background: linear-gradient($linear-gradient);
-    padding-top: 20px;
-  
-    .header-top {
-      @extend .flex;
-      align-items: center;
-  
-      .logo {
-        font-family: 'Suez One', serif;
-        color: #fff;
-        font-size: 50px;
-      }
-  
-      ul {
-          list-style: none;
-          margin: initial;
-  
+  background: linear-gradient($linear-gradient);
+  padding-top: 20px;
+
+  .header-top {
+    @extend .flex;
+    align-items: center;
+
+    .logo {
+      font-family: 'Suez One', serif;
+      color: #fff;
+      font-size: 50px;
+    }
+
+    ul {
+      list-style: none;
+      margin: initial;
+
       li {
-          display: inline-block;
-          margin-right: 57px;
-  
-          &:last-child {
-            margin-right: 0;
+        display: inline-block;
+        margin-right: 57px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        a {
+          color: #fff;
+          text-transform: uppercase;
+          font-size: 18px;
+
+          &::after {
+            content: "";
+            width: 0%;
+            display: block;
+            background-color: #fff;
+            height: 2px;
+            transition: all .3s ease;
           }
-  
-          a {
-            color: #fff;
-            text-transform: uppercase;
-            font-size: 18px;
-  
-            &::after {
-              content: "";
-              width: 0%;
-              display: block;
-              background-color: #fff;
-              height: 2px;
-              transition: all .3s ease;
-            }
-  
-            &:hover::after {
-              width: 100%;
-            }
-  
+
+          &:hover::after {
+            width: 100%;
           }
+
         }
       }
     }
-    .header-main {
-      @extend .flex;
-     margin-top: 100px;
+  }
+
+  .header-main {
+    @extend .flex;
+    margin-top: 100px;
 
     .info {
       margin-top: 130px;
@@ -120,5 +119,31 @@ header {
     border-bottom: 0;
     border-top: 400px solid transparent;
     border-right: 100vw solid #fff;
+  }
+}
+
+.features {
+  margin-top: 20px;
+  padding-bottom: 90px;
+  border-bottom: 1px solid #e0e0e0;
+
+  .block {
+    @extend .flex;
+    align-items: center;
+    color: #808080;
+
+    .info {
+      max-width: 500px;
+
+      h2 {
+        font-size: 45px;
+        font-weight: 700;
+        color: #000;
+
+        .dot {
+          color: #de173f;
+        }
+      }
+    }
   }
 }
